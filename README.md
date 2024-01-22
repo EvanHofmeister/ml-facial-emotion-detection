@@ -6,7 +6,8 @@
 # **Project Overview**
 The project aims to develop a machine learning model capable of recognizing and classifying human emotions based on facial expressions. This endeavor addresses the challenge of interpreting complex emotional states, which is a key aspect of enhancing human-computer interaction. By accurately identifying emotions, such technology can be applied in various domains including mental health assessment, customer service, and interactive gaming, improving the way machines understand and interact with humans.
 
-
+# **Choice of Modelw**
+In this project, I focused on using Convolutional Neural Networks (CNNs) for facial emotion recognition due to their superior ability to handle image data effectively. CNNs stand out for their automated feature extraction capabilities, allowing them to intuitively identify and learn critical facial features and expressions essential for detecting emotions. Their architecture is adept at managing the intricacies of spatial data, a vital aspect in processing facial images where alignment and positioning can vary. This focus on CNNs over other methodologies, like traditional machine learning or different neural network architectures, stems from their proven efficiency in dealing with complex visual patterns and their robustness in handling spatial variances in images, making them highly suitable for the nuanced task of emotion recognition in faces.
 
 ### Data Source
 The dataset utilized in this project is the [FER2013 dataset](https://www.kaggle.com/datasets/msambare/fer2013) dataset, available on Kaggle. This dataset, initially used in the ICML 2013 Challenges in Representation Learning, comprises grayscale images of human faces, each labeled with one of seven emotions: anger, disgust, fear, happiness, neutral, sadness, and surprise. The images are 48x48 pixels in size and are categorized into training and test sets.
