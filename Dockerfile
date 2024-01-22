@@ -1,8 +1,7 @@
 # Use the specified Python base image
-FROM python:3.8-slim
+FROM python:3.9-slim
 
 # Set environment variables
-ENV PYTHONUNBUFFERED 1
 ENV PYTHONUNBUFFERED=TRUE
 ENV RUNNING_IN_DOCKER=true
 
@@ -15,13 +14,19 @@ RUN apt-get update && \
 # Set the working directory in the Docker container
 WORKDIR /src
 
-# Copy the requirements.txt file and install Python dependencies
-COPY ./requirements.txt /src/requirements.txt
-RUN pip install --no-cache-dir -r /src/requirements.txt
+# Copy pipfile requirements
+COPY ["Pipfile", "Pipfile.lock", "./"]
 
-# Copy the necessary folders and files
-COPY ./src /src
-COPY ./notebooks/eda.ipynb /src/notebooks/
+# Install project dependencies
+RUN pipenv install --deploy --system && \
+rm -rf /root/.cache
+
+# Copy your source code and notebooks
+# Copy your source code, notebooks, models, and data
+COPY src/ ./src/
+COPY notebooks/ ./notebooks/
+COPY models/ ./models/
+COPY data/ ./data/
 
 # Add a new user and switch to it
 RUN adduser --disabled-password --gecos '' user
