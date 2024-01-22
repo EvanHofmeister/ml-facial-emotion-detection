@@ -1,5 +1,7 @@
 # **Facial Emotion Detection With Machine Learning**
-<center><img src = "references/images/dataset.png"/></center>
+<p align="center">
+  <img src = "references/images/dataset.png">
+</p>
 
 # **Project Overview**
 The project aims to develop a machine learning model capable of recognizing and classifying human emotions based on facial expressions. This endeavor addresses the challenge of interpreting complex emotional states, which is a key aspect of enhancing human-computer interaction. By accurately identifying emotions, such technology can be applied in various domains including mental health assessment, customer service, and interactive gaming, improving the way machines understand and interact with humans.
@@ -109,6 +111,7 @@ python train_final_model.py
 ```
 
 You should see similar model performance to below, depending on the number of epochs selected:
+
 ![Step1](references/images/accuracy_loss.png)
 ![Step1](references/images/confusion_matrix.png)
 
@@ -118,6 +121,7 @@ predict.py
 ```
 
 Here's an example of what's returned:
+
 ![Step1](references/images/prediction.png)
 
 ### Deployment with Docker
