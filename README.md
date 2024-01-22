@@ -121,8 +121,10 @@ predict.py
 ```
 
 Here's an example of what's returned:
+<p align="center">
+  <img src = "references/images/prediction.png">
+</p>
 
-![Step1](references/images/prediction.png)
 
 ### Deployment with Docker
 
