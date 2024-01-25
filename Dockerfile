@@ -5,6 +5,8 @@ FROM python:3.9-slim
 ENV PYTHONUNBUFFERED=TRUE
 ENV RUNNING_IN_DOCKER=true
 
+RUN pip --no-cache-dir install pipenv
+
 # Update the system and install necessary packages
 RUN apt-get update && \
     apt-get install -y sudo build-essential python3-pip python3-dev && \
@@ -31,3 +33,6 @@ COPY data/ ./data/
 # Add a new user and switch to it
 RUN adduser --disabled-password --gecos '' user
 USER user
+
+CMD ["python", "src/predict.py"]
+

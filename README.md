@@ -138,10 +138,10 @@ cd ./ml-facial-emotion-detection
 
 Build the container:
 ```sh
-docker build -t cancer_classification .
+docker build -t ml_emotion_detection .
 ```
 
 Run the container:
 ```sh
-docker run -it --rm -p 5000:5000 cancer_classification:latest
+docker run -d --name ml_app ml_emotion_detection
 ```
